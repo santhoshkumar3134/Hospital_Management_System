@@ -1,10 +1,10 @@
-package com.hospitalmanagement.patientprofileservice;
+package com.hospital.management;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PatientprofileserviceApplicationTests {
+class HospitalManagementSystemApplicationTests {
 
 	@Test
 	void contextLoads() {
