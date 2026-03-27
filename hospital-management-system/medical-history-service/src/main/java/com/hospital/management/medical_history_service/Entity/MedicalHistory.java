@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,8 @@ public class MedicalHistory {
     private Long medicalHistoryId;
     private String disease;
     private String treatment;
+    @PastOrPresent(message = "Diagnosed date should be at past or present")
     private LocalDateTime diagnosedAt;
+    @NotNull(message = "Patient id should not be blank")
     private Long patientId;
-    private String something;
 }
