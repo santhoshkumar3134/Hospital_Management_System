@@ -21,4 +21,5 @@ public class MedicalHistory {
     private String treatment;
     private LocalDateTime diagnosedAt;
     private Long patientId;
+    private String something;
 }
