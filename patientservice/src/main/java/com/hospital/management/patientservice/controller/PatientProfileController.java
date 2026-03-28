@@ -24,7 +24,7 @@ public class PatientProfileController {
     }
 
     @GetMapping("/get/{patientId}")
-    public ResponseEntity<PatientProfile> getPatientProfile(@PathVariable long patientId) {
+    public ResponseEntity<PatientProfile> getPatientProfileById(@PathVariable long patientId) {
         return ResponseEntity.ok(patientProfileService.getPatientProfileById(patientId));
     }
 
@@ -32,7 +32,7 @@ public class PatientProfileController {
     public ResponseEntity<PatientProfile> updatePatientProfile(
             @PathVariable Long patientId,
             @Valid @RequestBody PatientUpdateDTO dto) {
-        // Feature: Allows patients to update profiles [cite: 8, 32]
+
         return ResponseEntity.ok(patientProfileService.updatePatientProfileById(patientId, dto));
     }
 }
