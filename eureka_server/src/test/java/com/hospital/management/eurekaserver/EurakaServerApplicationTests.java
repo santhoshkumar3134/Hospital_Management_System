@@ -1,4 +1,4 @@
-package com.hospital.management.eurakaserver;
+package com.hospital.management.eurekaserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
