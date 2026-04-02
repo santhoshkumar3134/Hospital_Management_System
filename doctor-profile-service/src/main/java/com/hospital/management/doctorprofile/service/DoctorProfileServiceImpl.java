@@ -1,6 +1,7 @@
 package com.hospital.management.doctorprofile.service;
 
 
+import com.hospital.management.doctorprofile.dto.DoctorAppointmentResponseDTO;
 import com.hospital.management.doctorprofile.dto.DoctorRegistrationDTO;
 import com.hospital.management.doctorprofile.dto.DoctorProfileResponseDTO;
 import com.hospital.management.doctorprofile.dto.DoctorUpdateDTO;
@@ -83,7 +84,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
      * "Show me all Cardiologists".
      * Case-insensitive — "cardiologist" and "Cardiologist" both work.
      */
-    public List<DoctorProfileResponseDTO> getDoctorsBySpecialization(String specialization) {
+    public List<DoctorAppointmentResponseDTO> getDoctorsBySpecialization(String specialization) {
         log.info("Searching doctors by specialization={}", specialization);
 
         List<Doctor> doctors = doctorRepository
@@ -96,7 +97,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
         }
 
         return doctors.stream()
-                .map(doctor -> modelMapper.map(doctor, DoctorProfileResponseDTO.class))
+                .map(doctor -> modelMapper.map(doctor, DoctorAppointmentResponseDTO.class))
                 .toList();
     }
 
