@@ -1,6 +1,7 @@
 package com.hospital.management.doctorprofile.controller;
 
 
+import com.hospital.management.doctorprofile.dto.DoctorAppointmentResponseDTO;
 import com.hospital.management.doctorprofile.dto.DoctorRegistrationDTO;
 import com.hospital.management.doctorprofile.dto.DoctorProfileResponseDTO;
 import com.hospital.management.doctorprofile.dto.DoctorUpdateDTO;
@@ -51,9 +52,10 @@ public class DoctorProfileController {
 
     // GET /api/v1/doctors/search?specialization=Cardiologist
     // Called by Appointment Service when patient searches by specialization
-    @GetMapping("/search")
-    public ResponseEntity<List<DoctorProfileResponseDTO>> getDoctorsBySpecialization(
-            @RequestParam String specialization) {
+    // doctor id , doctor name, specialization
+    @GetMapping("/specialization/{specialization}")
+    public ResponseEntity<List<DoctorAppointmentResponseDTO>> getDoctorsBySpecialization(
+            @PathVariable String specialization) {
         log.info("Search doctors by specialization={}", specialization);
         return ResponseEntity.ok(doctorProfileServiceImpl.getDoctorsBySpecialization(specialization));
     }
@@ -67,4 +69,6 @@ public class DoctorProfileController {
         log.info("Update doctor request for id={}", id);
         return ResponseEntity.ok(doctorProfileServiceImpl.updateDoctor(id, updateDTO));
     }
+
+
 }
