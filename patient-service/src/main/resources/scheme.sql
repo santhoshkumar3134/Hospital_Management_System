@@ -9,4 +9,4 @@ INSERT INTO patient_profiles (patient_id, name, date_of_birth, contact_details)
 VALUES (1002, 'Robert Wilson', '1978-03-10', '7654321098');
 
 -- Ensure the sequence is updated to avoid primary key conflicts
-SELECT setval('patient_id_seq', 1003, false);
+ALTER TABLE patient_profiles AUTO_INCREMENT = 1003;

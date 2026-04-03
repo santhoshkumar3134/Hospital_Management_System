@@ -2,14 +2,14 @@ package com.hospital.management.patientservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@Data
+
+@Getter
+@Setter
+@ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,6 +27,5 @@ public class PatientRegistrationDTO {
     @Pattern(regexp = "^\\d{10}$", message = "Contact details must be 10 digits")
     private String contactDetails;
 
-    // This data will be sent to the Medical History Microservice
     private String initialMedicalHistory;
 }
