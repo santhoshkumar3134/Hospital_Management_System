@@ -12,9 +12,8 @@ import java.time.LocalTime;
 public class NotificationRequest {
     private Long patientId;
     private Long doctorId;
-    private Long appointmentId;
-    private String status;           // CONFIRMED, CANCELLED, COMPLETED
-    private LocalTime time;      // Appointment time
-    private LocalDate date;
-    // Appointment date
+    private String confirmationCode;  // Public API identifier instead of internal appointmentId
+    private String status;            // CONFIRMED, CANCELLED, RESCHEDULED, COMPLETED
+    private LocalTime time;           // Appointment time
+    private LocalDate date;           // Appointment date
 }

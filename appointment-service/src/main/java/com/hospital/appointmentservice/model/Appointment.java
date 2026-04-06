@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "appointment")
@@ -23,6 +24,9 @@ public class Appointment {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appointment_seq_gen")
     private Long appointmentId;
+
+    @Column(name = "confirmation_code", unique = true, nullable = false, length = 36)
+    private String confirmationCode;
 
     @NotNull(message = "Patient ID is required")
     @Column(name = "patient_id", nullable = false)
@@ -47,4 +51,11 @@ public class Appointment {
 
     @Version
     private Integer version;
+
+    @PrePersist
+    public void generateConfirmationCode() {
+        if (this.confirmationCode == null) {
+            this.confirmationCode = UUID.randomUUID().toString();
+        }
+    }
 }

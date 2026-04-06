@@ -52,7 +52,7 @@ public class AppointmentService {
     public Appointment bookAppointment(BookAppointmentRequest request) {
         // 1. Check if appointment already exists
         if (appointmentRepository.existsByPatientIdAndDoctorId(request.patientId(), request.doctorId())) {
-            throw new RuntimeException("Patient already has an appointment with this doctor.");
+            throw new RuntimeException("You already have an appointment with this doctor.");
         }
 
         // 2. REMOTE CALL - Try to claim the time slot in Doctor Schedule Service
@@ -78,7 +78,7 @@ public class AppointmentService {
                 notification.setPatientId(savedAppointment.getPatientId());
                 notification.setDoctorId(savedAppointment.getDoctorId());
                 notification.setStatus(savedAppointment.getStatus().toString());
-                notification.setAppointmentId(savedAppointment.getAppointmentId());
+                notification.setConfirmationCode(savedAppointment.getConfirmationCode());
                 notification.setTime(savedAppointment.getAppointmentDate().toLocalTime());
                 notification.setDate(savedAppointment.getAppointmentDate().toLocalDate());
 
@@ -96,20 +96,21 @@ public class AppointmentService {
     }
 
     /**
-     * Cancel an appointment by appointmentId
+     * Cancel an appointment by confirmation code (not by internal appointmentId)
+     * This is a security best practice - we don't expose internal database IDs
      */
     @Transactional
-    public Appointment cancelAppointment(Long appointmentId) {
-        // 1. Find the appointment
-        Appointment appointment = appointmentRepository.findByAppointmentId(appointmentId)
-                .orElseThrow(() -> new RuntimeException("Appointment not found with ID: " + appointmentId));
+    public Appointment cancelAppointment(String confirmationCode) {
+        // 1. Find the appointment by confirmation code (external identifier)
+        Appointment appointment = appointmentRepository.findByConfirmationCode(confirmationCode)
+                .orElseThrow(() -> new RuntimeException("Appointment not found with confirmation code: " + confirmationCode));
 
         // 2. Check if already cancelled
         if (appointment.getStatus() == AppointmentStatus.CANCELLED) {
             throw new RuntimeException("Appointment is already cancelled.");
         }
 
-        // 3. REMOTE CALL - Cancel the booking in Doctor Schedule Service using slotId
+        // 3. REMOTE CALL - Cancel the booking in Doctor Schedule Service
         try {
             doctorSheduleClient.cancelBooking(appointment.getDoctorId(), appointment.getPatientId(), appointment.getAppointmentDate());
         } catch (Exception e) {
@@ -128,6 +129,7 @@ public class AppointmentService {
                 notification.setPatientId(cancelledAppointment.getPatientId());
                 notification.setDoctorId(cancelledAppointment.getDoctorId());
                 notification.setStatus(cancelledAppointment.getStatus().toString());
+                notification.setConfirmationCode(cancelledAppointment.getConfirmationCode());
                 notification.setTime(cancelledAppointment.getAppointmentDate().toLocalTime());
                 notification.setDate(cancelledAppointment.getAppointmentDate().toLocalDate());
 
@@ -140,6 +142,77 @@ public class AppointmentService {
             return cancelledAppointment;
         } catch (ObjectOptimisticLockingFailureException e) {
             throw new RuntimeException("Concurrent cancellation detected. Please try again.");
+        }
+    }
+
+    /**
+     * Reschedule an existing appointment to a new time slot
+     */
+    @Transactional
+    public Appointment rescheduleAppointment(RescheduleAppointmentRequest request) {
+        // 1. Find the existing appointment by confirmation code
+        Appointment existingAppointment = appointmentRepository.findByConfirmationCode(request.confirmationCode())
+                .orElseThrow(() -> new RuntimeException("Appointment not found with confirmation code: " + request.confirmationCode()));
+
+        // 2. Check if appointment is still valid (not cancelled or completed)
+        if (existingAppointment.getStatus() == AppointmentStatus.CANCELLED) {
+            throw new RuntimeException("Cannot reschedule a cancelled appointment.");
+        }
+
+        if (existingAppointment.getStatus() == AppointmentStatus.COMPLETED) {
+            throw new RuntimeException("Cannot reschedule a completed appointment.");
+        }
+
+        // 3. Check if new time slot is not already booked by this doctor
+        if (appointmentRepository.existsByDoctorIdAndAppointmentDate(
+                existingAppointment.getDoctorId(), request.newAppointmentTime())) {
+            throw new RuntimeException("Doctor is not available at the requested time.");
+        }
+
+        // 4. REMOTE CALL - Release the old slot in Doctor Schedule Service
+        try {
+            doctorSheduleClient.cancelBooking(existingAppointment.getDoctorId(), 
+                    existingAppointment.getPatientId(), 
+                    existingAppointment.getAppointmentDate());
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to release old time slot: " + e.getMessage());
+        }
+
+        // 5. REMOTE CALL - Claim the new time slot in Doctor Schedule Service
+        try {
+            doctorSheduleClient.claimTimeSlot(existingAppointment.getDoctorId(), 
+                    existingAppointment.getPatientId(), 
+                    request.newAppointmentTime());
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to claim new time slot: " + e.getMessage());
+        }
+
+        // 6. Update the appointment with new time
+        existingAppointment.setAppointmentDate(request.newAppointmentTime());
+        existingAppointment.setStatus(AppointmentStatus.CONFIRMED); // Reconfirm after rescheduling
+
+        try {
+            Appointment rescheduledAppointment = appointmentRepository.save(existingAppointment);
+
+            // 7. SEND NOTIFICATION - Notify about appointment rescheduling
+            try {
+                NotificationRequest notification = new NotificationRequest();
+                notification.setPatientId(rescheduledAppointment.getPatientId());
+                notification.setDoctorId(rescheduledAppointment.getDoctorId());
+                notification.setStatus("RESCHEDULED");
+                notification.setConfirmationCode(rescheduledAppointment.getConfirmationCode());
+                notification.setTime(rescheduledAppointment.getAppointmentDate().toLocalTime());
+                notification.setDate(rescheduledAppointment.getAppointmentDate().toLocalDate());
+
+                notificationServiceClient.sendNotification(notification);
+            } catch (Exception e) {
+                // Log notification failure but don't fail the rescheduling
+                System.err.println("Failed to send rescheduling notification: " + e.getMessage());
+            }
+
+            return rescheduledAppointment;
+        } catch (ObjectOptimisticLockingFailureException e) {
+            throw new RuntimeException("Concurrent rescheduling detected. Please try again.");
         }
     }
 }

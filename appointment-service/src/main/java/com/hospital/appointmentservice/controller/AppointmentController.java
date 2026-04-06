@@ -42,10 +42,22 @@ public class AppointmentController {
     }
 
 
-    @PutMapping("/cancel/{appointmentId}")
+    @PutMapping("/cancel/{confirmationCode}")
     public ResponseEntity<Appointment> cancelAppointment(
-            @PathVariable Long appointmentId) {
-        Appointment result = appointmentService.cancelAppointment(appointmentId);
+            @PathVariable String confirmationCode) {
+        Appointment result = appointmentService.cancelAppointment(confirmationCode);
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Reschedule an existing appointment to a new time slot
+     * Request: { "confirmationCode": "550e8400-e29b-41d4-a716-446655440000", "newAppointmentTime": "2026-04-10T14:00:00" }
+     * Response: Rescheduled Appointment details
+     */
+    @PutMapping("/reschedule")
+    public ResponseEntity<Appointment> rescheduleAppointment(
+            @Valid @RequestBody RescheduleAppointmentRequest request) {
+        Appointment result = appointmentService.rescheduleAppointment(request);
         return ResponseEntity.ok(result);
     }
 }
