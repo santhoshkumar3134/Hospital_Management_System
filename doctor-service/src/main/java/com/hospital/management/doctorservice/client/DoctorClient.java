@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * creating availability or slots for that doctor.
  * Resolves via Eureka — no hardcoded URL.
  */
+//url=url of the below service "http://localhost/:8082"  -> Optional
 @FeignClient(name = "doctor-service")
 public interface DoctorClient {
 

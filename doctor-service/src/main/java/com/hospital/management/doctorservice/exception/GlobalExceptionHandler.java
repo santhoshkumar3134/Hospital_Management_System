@@ -33,6 +33,7 @@ public class GlobalExceptionHandler {
 
     /**
      * Handles @Valid annotation failures on request DTOs.
+     * If valid failure it should send BAD_Request status
      * Returns all field validation errors at once so the client
      * knows exactly what was wrong with their request.
      */
@@ -74,5 +75,13 @@ public class GlobalExceptionHandler {
         body.put("error", status.getReasonPhrase());
         body.put("message", message);
         return ResponseEntity.status(status).body(body);
+
+
+        // we can also use this by the below methods of creating exception class. Full details in the SpringBootNotes pdf
+//        Steps:
+//        1.	Create ErrorDetails class
+//        2.	Create GlobalExceptionHandler class
+//        3.	Test using postman client
+
     }
 }
