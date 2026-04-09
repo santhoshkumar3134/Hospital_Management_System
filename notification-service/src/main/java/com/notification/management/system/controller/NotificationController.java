@@ -19,7 +19,7 @@ public class NotificationController {
 
     private final NotificationService notificationService;
 
-    @PostMapping("/send")
+    @PostMapping
     public ResponseEntity<List<NotificationResponseDTO>> sendNotification(
             @Valid @RequestBody NotificationRequestDTO requestDTO) {
         List<NotificationResponseDTO> responses = notificationService.sendNotification(requestDTO);
