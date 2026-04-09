@@ -50,10 +50,6 @@ public class AppointmentService {
      */
     @Transactional
     public Appointment bookAppointment(BookAppointmentRequest request) {
-        // 1. Check if appointment already exists
-        if (appointmentRepository.existsByPatientIdAndDoctorId(request.patientId(), request.doctorId())) {
-            throw new RuntimeException("You already have an appointment with this doctor.");
-        }
 
         // 2. REMOTE CALL - Try to claim the time slot in Doctor Schedule Service
         try {

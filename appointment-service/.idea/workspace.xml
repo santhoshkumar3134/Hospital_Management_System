@@ -5,13 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061c2044-7582-4c5a-8f43-71b396eb18e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/client/DoctorClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/client/MedicalHistoryClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/config/MapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/controller/DoctorScheduleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/dto/DoctorAvailabilityRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/dto/DoctorResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/dto/MedicalHistoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/dto/TimeSlotDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/entity/DoctorAvailability.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/entity/DoctorSlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/exception/ScheduleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/repository/DoctorAvailabilityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/repository/DoctorSlotRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/service/DoctorScheduleInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/service/DoctorScheduleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/service/ScheduleCleanupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/test/java/com/hospital/management/doctorservice/service/DoctorScheduleServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doctor-service/src/test/java/com/hospital/management/doctorservice/service/ScheduleCleanupServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/NotificationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/NotificationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/TimeSlotDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/TimeSlotDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/repository/AppointmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/DoctorServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/DoctorServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/DoctorSheduleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/DoctorSheduleClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/NotificationServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/client/NotificationServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/GetTimeSlotsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/dto/GetTimeSlotsRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/appointmentservice/service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-profile-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-profile-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-profile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-profile-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/DoctorserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-service/src/main/java/com/hospital/management/doctorservice/DoctorserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/PatientApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,21 +75,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Appointment-service.executor": "Run",
-    "Application.AppointmentApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "appointment__service",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/nithin/practice/appointment-service",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Appointment-service.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AppointmentApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;appointment__service&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/nithin/practice/appointment-service&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.AppointmentApplication">
     <configuration name="Appointment-service" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.hospital.Appointment.AppointmentApplication" />

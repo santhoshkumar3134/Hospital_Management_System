@@ -12,6 +12,6 @@ public record GetTimeSlotsRequest(
         @NotNull(message = "Doctor ID is required")
         Long doctorId,
 
-        @NotBlank(message = "date is required")
+        @NotNull(message = "date is required")
         LocalDate date
 ) {}
