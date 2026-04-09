@@ -15,15 +15,15 @@ public class MessageBuilderService {
     public String buildPatientMessage(NotificationRequestDTO dto) {
         String name = fetchPatientName(dto.getPatientId());
         return switch (dto.getAppointmentStatus()) {
-            case CONFIRMED -> "Dear " + name + ", your appointment is confirmed and the appointment ID is:  " + dto.getAppointmentId() + ".";
-            case CANCELLED -> "Dear " + name + ", appointment " + dto.getAppointmentId() + " was cancelled.";
-            case COMPLETED -> "Dear " + name + ", thank you for your visit (ID: " + dto.getAppointmentId() + ").";
+            case CONFIRMED -> "Dear " + name + ", your appointment is confirmed and the appointment ID is:  " + dto.getConfirmationCode() + ".";
+            case CANCELLED -> "Dear " + name + ", appointment " + dto.getConfirmationCode() + " was cancelled.";
+            case COMPLETED -> "Dear " + name + ", thank you for your visit (ID: " + dto.getConfirmationCode() + ").";
         };
     }
 
     public String buildDoctorMessage(NotificationRequestDTO dto) {
         String dName = fetchDoctorName(dto.getDoctorId());
-        return "Hello Dr. " + dName + ", there is a status update (" + dto.getAppointmentStatus() + ") for Appointment " + dto.getAppointmentId();
+        return "Hello Dr. " + dName + ", there is a status update (" + dto.getAppointmentStatus() + ") for Appointment " + dto.getConfirmationCode();
     }
 
     private String fetchPatientName(Long id) {
