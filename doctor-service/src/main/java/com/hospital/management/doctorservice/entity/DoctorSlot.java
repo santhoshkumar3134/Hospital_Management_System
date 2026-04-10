@@ -40,9 +40,8 @@ public class DoctorSlot {
     // No JPA relationship — only the ID is stored (decoupled microservice design).
     private Long patientId;
 
-    // NEW — Appointment Service expects createdAt in the TimeSlotDTO response.
-    // @CreationTimestamp sets this automatically when the slot is first saved.
-    // updatable=false ensures it never changes after creation.
+    // Internal audit field — records when the slot was created.
+// Not exposed in TimeSlotDTO — internal use only.
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;

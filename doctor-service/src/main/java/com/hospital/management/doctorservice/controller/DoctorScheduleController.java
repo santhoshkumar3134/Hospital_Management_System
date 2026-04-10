@@ -4,6 +4,8 @@ import com.hospital.management.doctorservice.dto.DoctorAvailabilityRequestDTO;
 import com.hospital.management.doctorservice.dto.MedicalHistoryDTO;
 import com.hospital.management.doctorservice.dto.TimeSlotDTO;
 import com.hospital.management.doctorservice.service.DoctorScheduleService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
+@Tag(name = "Doctor Schedule API", description = "Manages doctor availability and slot booking")
 @RestController
 @RequestMapping("/api/v1/doctor-schedule")
 @RequiredArgsConstructor
@@ -29,6 +32,7 @@ public class DoctorScheduleController {
      * Returns 400 if doctorId does not exist in Doctor Service.
      * Returns 503 if Doctor Service is currently unavailable.
      */
+    @Operation(summary = "Set doctor availability", description = "Creates shift and generates 30-min slots. Locks after save.")
     @PostMapping("/set-availability")
     public ResponseEntity<String> setAvailability(
             @Valid @RequestBody DoctorAvailabilityRequestDTO availabilityDTO) {
@@ -49,6 +53,7 @@ public class DoctorScheduleController {
      *      because Appointment Service expects fields:
      *      doctorId, patientId, startTime (LocalDateTime), createdAt
      */
+    @Operation(summary = "Get Doctor Timeslots", description = "Returns all the time slots available for a particular doctor based on availability")
     @GetMapping("/slots/doctor/{doctorId}/{date}")
     public ResponseEntity<List<TimeSlotDTO>> getTimeSlotsByDoctorId(
             @PathVariable Long doctorId,
@@ -71,6 +76,7 @@ public class DoctorScheduleController {
      *   Appointment Service does not store slotId — it stores the startTime.
      *   We find the slot by doctorId + startTime in the service layer.
      */
+    @Operation(summary = "Update the Slot", description = "Update the slots if the slots are booked by patient, and marked true")
     @PutMapping("/slots/claim")
     public ResponseEntity<Void> claimTimeSlot(
             @RequestParam Long doctorId,
@@ -90,6 +96,7 @@ public class DoctorScheduleController {
      * Called by Appointment Service when patient cancels.
      * Uses doctorId + patientId + startTime — no slotId needed.
      */
+    @Operation(summary = "Delete the booked Timeslot", description = "Patient can able to delete/cancel their booked timeslot")
     @PatchMapping("/cancel-booking")
     public ResponseEntity<String> cancelBooking(
             @RequestParam Long doctorId,
@@ -108,6 +115,7 @@ public class DoctorScheduleController {
      * Returns 3 most recent visits via Medical History microservice.
      * Returns empty list (not 500) if Medical History Service is unavailable.
      */
+    @Operation(summary = "View the patient medical history", description = "Doctor can view the patient history based on their previous visit")
     @GetMapping("/view-history/{slotId}")
     public ResponseEntity<List<MedicalHistoryDTO>> viewPatientHistory(
             @PathVariable Long slotId) {
@@ -122,6 +130,7 @@ public class DoctorScheduleController {
      * GET: Returns all dates where this doctor has availability set.
      * Used by Appointment Service to populate the calendar date picker.
      */
+    @Operation(summary = "Get doctor availability dates", description = "Patient can view the doctor availability dates")
     @GetMapping("/available-dates/{doctorId}")
     public ResponseEntity<List<LocalDate>> getAvailableDates(
             @PathVariable Long doctorId) {

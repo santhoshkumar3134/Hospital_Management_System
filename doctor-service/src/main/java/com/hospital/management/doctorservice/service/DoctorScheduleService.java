@@ -83,6 +83,7 @@ public class DoctorScheduleService implements DoctorScheduleInterface {
         }
 
         // Map DTO → Entity
+        //(source,destination)
         DoctorAvailability availability = modelMapper.map(availabilityDTO, DoctorAvailability.class);
 
         // --- Validation 1: shiftEnd must be after shiftStart ---
@@ -179,7 +180,7 @@ public class DoctorScheduleService implements DoctorScheduleInterface {
         }
 
         // Verify the correct patient is cancelling — prevents wrong patient cancelling
-        if (!slot.getPatientId().equals(patientId)) {
+        if (slot.getPatientId() == null || !slot.getPatientId().equals(patientId)) {
             throw new ScheduleException(
                     "PatientId=" + patientId + " did not book this slot. Cannot cancel.",
                     HttpStatus.FORBIDDEN);
