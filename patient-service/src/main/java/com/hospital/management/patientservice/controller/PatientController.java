@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class PatientController {
 
-    private final PatientService patientService;
+    private PatientService patientService;
 
     @PostMapping
     public ResponseEntity<PatientResponseDTO> registerPatient(

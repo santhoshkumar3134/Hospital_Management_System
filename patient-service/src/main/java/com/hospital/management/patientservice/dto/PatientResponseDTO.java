@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatientResponseDTO {
-    private String name;
     private long patientId;
-    private String responseMessage;
+    private String name;
+
+//    private String responseMessage;
 }
