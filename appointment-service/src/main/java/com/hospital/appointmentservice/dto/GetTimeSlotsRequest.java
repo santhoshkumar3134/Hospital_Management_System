@@ -1,6 +1,5 @@
 package com.hospital.appointmentservice.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
@@ -12,6 +11,6 @@ public record GetTimeSlotsRequest(
         @NotNull(message = "Doctor ID is required")
         Long doctorId,
 
-        @NotBlank(message = "date is required")
+        @NotNull(message = "date is required")
         LocalDate date
 ) {}

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@FeignClient(name = "doctor-sheduling-service", url = "${doctor.service.url}")
+@FeignClient(name = "doctor-service")
 public interface DoctorSheduleClient {
     @GetMapping("/api/v1/doctor-schedule/slots/doctor/{doctorId}/{date}")
     List<TimeSlotDTO> getTimeSlotsByDoctorId(

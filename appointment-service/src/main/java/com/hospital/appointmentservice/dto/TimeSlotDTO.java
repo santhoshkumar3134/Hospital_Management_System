@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TimeSlotDTO {
-    private long slotId;
+    // private long slotId;
     private LocalDateTime startTime;
     private boolean isBooked;
 }

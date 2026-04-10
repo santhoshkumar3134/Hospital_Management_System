@@ -8,7 +8,7 @@ import java.util.List;
 
 
 ///api/v1/doctors/specialization/{specialization} -> List of doctors with that specialization and their available slots
-@FeignClient(name = "doctor-profile-service", url = "${doctor.service.url}")
+@FeignClient(name = "doctor-profile-service")
 public interface DoctorServiceClient {
 
     // Get available doctors by specialization (returns only doctorId, doctorName, specialization)
@@ -17,5 +17,5 @@ public interface DoctorServiceClient {
             @PathVariable String specialization
     );
 
-
+    // Get available time slots for a doctor on a specific date
 }
