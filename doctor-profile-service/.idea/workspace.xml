@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="30fb73d4-a395-41c9-8ea6-4b61fb070165" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/DoctorProfileApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/client/NotificationClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/controller/DoctorProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/dto/DoctorAppointmentResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/dto/DoctorProfileResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/dto/DoctorRegistrationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/dto/DoctorUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/dto/MedicalHistoryRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/entity/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/repository/DoctorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/service/DoctorProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/service/DoctorProfileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/PatientApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/client/MedicalHistoryClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/client/NotificationClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/dto/MedicalHistoryRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/dto/PatientUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/exception/PatientNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/repository/PatientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/service/PatientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patient-service/src/main/java/com/hospital/management/patientservice/service/PatientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../appointment-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointment-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../appointment-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointment-service/src/test/java/com/hospital/appointmentservice/controller/AppointmentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../appointment-service/src/test/java/com/hospital/appointmentservice/controller/AppointmentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/exception/DoctorNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/management/doctorprofile/exception/DoctorNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/DoctorProfileApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/DoctorProfileApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/client/DoctorScheduleClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/config/AppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/controller/DoctorProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/controller/DoctorProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorAppointmentResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorAppointmentResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorProfileResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorProfileResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorRegistrationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorRegistrationDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorUpdateDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/dto/DoctorUpdateDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/entity/Doctor$DoctorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/entity/Doctor$DoctorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/entity/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/entity/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/exception/ErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/exception/ErrorResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/repository/DoctorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/repository/DoctorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/service/DoctorProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/service/DoctorProfileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/service/DoctorProfileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/management/doctorprofile/service/DoctorProfileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hospital.management.doctorprofile.DoctorProfileApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hospital.management.doctorprofile.service.DoctorProfileServiceImplTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hospital.management.doctorprofile.DoctorProfileApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hospital.management.doctorprofile.service.DoctorProfileServiceImplTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hospital/management/doctorprofile/DoctorProfileApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hospital/management/doctorprofile/service/DoctorProfileServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doctor-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../doctor-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medical-history-service/controller/MedicalHistoryController" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medical-history-service/repository/MedicalHistoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medical-history-service/service/MedicalHistoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/DTO/MedicalHistoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/DTO/MedicalHistoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/controller/MedicalHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/controller/MedicalHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/repository/MedicalHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/src/main/java/com/hospital/management/medicalhistoryservice/repository/MedicalHistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../medical-history-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../medical-history-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/src/main/java/com/notification/management/system/service/MessageBuilderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/src/main/java/com/notification/management/system/service/MessageBuilderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/controller/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/dto/NotificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/dto/NotificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/dto/NotificationRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/dto/NotificationRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/model/Notification$NotificationBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/model/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/model/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/service/MessageBuilderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/service/MessageBuilderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/service/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../notification-service/target/classes/com/notification/management/system/service/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/classes/scheme.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/patientservice-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/target/patientservice-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/patientservice-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../patient-service/target/patientservice-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/surefire-reports/TEST-com.hospital.management.patientservice.PatientApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/surefire-reports/TEST-com.hospital.management.patientservice.service.PatientServiceImplTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/surefire-reports/com.hospital.management.patientservice.PatientApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/surefire-reports/com.hospital.management.patientservice.service.PatientServiceImplTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/test-classes/com/hospital/management/patientservice/PatientApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../patient-service/target/test-classes/com/hospital/management/patientservice/service/PatientServiceImplTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "santhoshkumar3134"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/santhoshkumar3134/Hospital_Management_System.git",
+    "accountId": "8154595a-9db0-40da-8c13-a22bdd24322f"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3BfHEEEiqKGIyuhaHAw6f8wK448" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DoctorProfileApplication.executor": "Run",
+    "Application.DoctorprofileApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.hospital.management.doctorprofile.dto" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.hospital.management.doctorprofile.service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DoctorProfileApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hospital.management.doctorprofile.DoctorProfileApplication" />
+      <module name="doctor-profile-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hospital.management.doctorprofile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DoctorProfileApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30fb73d4-a395-41c9-8ea6-4b61fb070165" name="Changes" comment="" />
+      <created>1774873090963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774873090963</updated>
+    </task>
+    <servers />
+  </component>
+</project>
