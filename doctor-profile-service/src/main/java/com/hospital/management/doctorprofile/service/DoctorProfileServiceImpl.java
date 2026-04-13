@@ -6,8 +6,7 @@ import com.hospital.management.doctorprofile.dto.DoctorRegistrationDTO;
 import com.hospital.management.doctorprofile.dto.DoctorProfileResponseDTO;
 import com.hospital.management.doctorprofile.dto.DoctorUpdateDTO;
 import com.hospital.management.doctorprofile.entity.Doctor;
-import com.hospital.management.doctorprofile.exception.DoctorException;
-import com.hospital.management.doctorprofile.exception.ResourceNotFoundException;
+import com.hospital.management.doctorprofile.exception.DoctorNotFoundException;
 import com.hospital.management.doctorprofile.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +36,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
 
         // Duplicate email guard — each doctor must have a unique email
         if (doctorRepository.existsByEmail(requestDTO.getEmail())) {
-            throw new DoctorException(
+            throw new DoctorNotFoundException(
                     "Doctor with email " + requestDTO.getEmail() + " already exists.",
                     HttpStatus.CONFLICT);
         }
@@ -60,7 +59,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
         log.info("Fetching doctor with id={}", id);
 
         Doctor doctor = doctorRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Doctor", id));
+                .orElseThrow(() -> new DoctorNotFoundException("Doctor not found with id: " + id, HttpStatus.NOT_FOUND));
 
         return modelMapper.map(doctor, DoctorProfileResponseDTO.class);
     }
@@ -91,7 +90,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
                 .findBySpecializationIgnoreCase(specialization);
 
         if (doctors.isEmpty()) {
-            throw new DoctorException(
+            throw new DoctorNotFoundException(
                     "No doctors found with specialization: " + specialization,
                     HttpStatus.NOT_FOUND);
         }
@@ -111,7 +110,7 @@ public class DoctorProfileServiceImpl implements  DoctorProfileService{
         log.info("Updating doctor with id={}", id);
 
         Doctor doctor = doctorRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Doctor", id));
+                .orElseThrow(() -> new DoctorNotFoundException("Doctor not found with id: " + id, HttpStatus.NOT_FOUND));
 
         // Only update fields that are explicitly provided
         // Null check prevents overwriting existing data with null

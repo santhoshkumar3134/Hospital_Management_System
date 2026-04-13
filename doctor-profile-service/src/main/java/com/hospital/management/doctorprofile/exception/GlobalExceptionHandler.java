@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // 404 / 409 — all DoctorException subclasses including ResourceNotFoundException
-    @ExceptionHandler(DoctorException.class)
-    public ResponseEntity<ErrorResponse> handleDoctorException(DoctorException ex) {
+    // 404 / 409 — all DoctorNotFoundException subclasses including ResourceNotFoundException
+    @ExceptionHandler(DoctorNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleDoctorException(DoctorNotFoundException ex) {
         log.warn("Doctor service exception: {}", ex.getMessage());
         return buildResponse(ex.getStatus(), ex.getMessage());
     }

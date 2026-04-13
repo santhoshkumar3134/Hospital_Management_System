@@ -22,3 +22,4 @@ public class DoctorUpdateDTO {
 
     private String designation;
 }
+

@@ -6,10 +6,10 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.5</version> <!-- Downgrade from 4.0.4 -->
-        <relativePath/>
+        <groupId>com.hospital.management</groupId>
+        <artifactId>hospital-management-system</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.hospital.management</groupId>
@@ -20,7 +20,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <properties>
         <java.version>21</java.version>
-        <spring-cloud.version>2023.0.3</spring-cloud.version> <!-- Compatible with Boot 3.3.x -->
+        <spring-cloud.version>2024.0.1</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -48,17 +48,21 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
         </dependency>
 
         <!-- Eureka Discovery Client -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
-        <!-- Spring Cloud Config Client -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-config</artifactId>-->
-<!--        </dependency>-->
-
+<!--         Spring Cloud Config Client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
         <!-- OpenFeign — to call Doctor Schedule Service -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -94,6 +98,8 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
 
     <dependencyManagement>
         <dependencies>
