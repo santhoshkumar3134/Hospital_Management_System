@@ -1,7 +1,6 @@
 package com.hospital.management.medicalhistoryservice.repository;
 
 
-import com.hospital.management.medical_history_service.MedicalHistoryServiceApplication;
 import com.hospital.management.medicalhistoryservice.entity.MedicalHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

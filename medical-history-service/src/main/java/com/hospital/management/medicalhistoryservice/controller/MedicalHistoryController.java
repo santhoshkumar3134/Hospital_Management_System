@@ -21,9 +21,9 @@ public class MedicalHistoryController {
                 medicalHistoryService.getAllMedicalHistory());
     }
 
-    @GetMapping("get/{patientId}")
-    public ResponseEntity<List<MedicalHistoryDTO>> getMedicalRecord(@PathVariable("patientId") Long id) {
-        //to be coded soon.
+    @GetMapping("/patient/{patientId}")
+    public ResponseEntity<MedicalHistory> getMedicalRecord(@PathVariable("patientId") Long patientId) {
+        return ResponseEntity.ok(medicalHistoryService.getMedicalHistory(patientId));
     }
 
     @PostMapping("/save")
@@ -32,7 +32,6 @@ public class MedicalHistoryController {
                 .recordId(medicalHistoryDTO.getRecordId())
                 .patientId(medicalHistoryDTO.getPatientId())
                 .diagnosis(medicalHistoryDTO.getDiagnosis())
-                .diagnosedAt(medicalHistoryDTO.getDiagnosedAt())
                 .prescribedMeds(medicalHistoryDTO.getPrescribedMeds())
                 .build();
         return ResponseEntity.ok().body("Successfully created the medical record");
