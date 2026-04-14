@@ -12,7 +12,7 @@ import java.util.List;
 public interface DoctorServiceClient {
 
     // Get available doctors by specialization (returns only doctorId, doctorName, specialization)
-    @GetMapping("/api/v1/doctor-schedule/doctors/specialization/{specialization}")
+    @GetMapping("/api/v1/doctors/specialization/{specialization}")
     List<DoctorAvailabilityDTO> getAvailableDoctorsBySpecialization(
             @PathVariable String specialization
     );

@@ -22,6 +22,9 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
 
     Optional<Appointment> findByAppointmentId(Long appointmentId);
 
+    // Inside AppointmentRepository.java
+    boolean existsByPatientIdAndDoctorIdAndAppointmentDate(Long patientId, Long doctorId, LocalDateTime appointmentDate);
+
     // Find appointment by confirmation code (public API identifier)
     Optional<Appointment> findByConfirmationCode(String confirmationCode);
 

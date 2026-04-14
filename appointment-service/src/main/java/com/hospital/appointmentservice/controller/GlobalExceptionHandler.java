@@ -1,5 +1,6 @@
 package com.hospital.appointmentservice.controller;
 
+import com.hospital.appointmentservice.exception.BusinessValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,15 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
+    @ExceptionHandler(BusinessValidationException.class)
+    public ResponseEntity<Map<String, String>> handleBusinessValidationException(BusinessValidationException ex) {
+        logger.warn("Business validation failed: {}", ex.getMessage());
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", ex.getMessage());
+        // 400 Bad Request (or 409 Conflict) is correct for business rule violations
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handleRuntimeException(RuntimeException e) {

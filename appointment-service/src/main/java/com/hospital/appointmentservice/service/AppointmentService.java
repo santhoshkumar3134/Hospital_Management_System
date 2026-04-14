@@ -4,6 +4,7 @@ import com.hospital.appointmentservice.client.DoctorServiceClient;
 import com.hospital.appointmentservice.client.DoctorSheduleClient;
 import com.hospital.appointmentservice.client.NotificationServiceClient;
 import com.hospital.appointmentservice.dto.*;
+import com.hospital.appointmentservice.exception.BusinessValidationException;
 import com.hospital.appointmentservice.model.Appointment;
 import com.hospital.appointmentservice.model.AppointmentStatus;
 import com.hospital.appointmentservice.repository.AppointmentRepository;
@@ -64,11 +65,16 @@ public class AppointmentService {
     public Appointment bookAppointment(BookAppointmentRequest request) {
         logger.info("Booking appointment for patientId: {}, doctorId: {}, startTime: {}", 
                 request.patientId(), request.doctorId(), request.startTime());
-        
-        // 1. Check if appointment already exists
-        if (appointmentRepository.existsByPatientIdAndDoctorId(request.patientId(), request.doctorId())) {
-            logger.warn("Patient {} already has an appointment with doctor {}", request.patientId(), request.doctorId());
-            throw new RuntimeException("You already have an appointment with this doctor.");
+        if (appointmentRepository.existsByPatientIdAndAppointmentDate(request.patientId(), request.startTime())) {
+            throw new BusinessValidationException("You already have an appointment scheduled at this time.");
+        }
+        // 1. Check if appointment already exists AT THIS TIME
+        if (appointmentRepository.existsByPatientIdAndDoctorIdAndAppointmentDate(
+                request.patientId(),
+                request.doctorId(),
+                request.startTime())) {
+
+            throw new BusinessValidationException("You already have an appointment with this doctor at this specific time.");
         }
 
         // 2. REMOTE CALL - Try to claim the time slot in Doctor Schedule Service
